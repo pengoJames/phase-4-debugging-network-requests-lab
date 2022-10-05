@@ -63,11 +63,17 @@ developing your own process.
 - Add a new toy when the toy form is submitted
 
   - How I debugged:
+  Checked Rails server log and noticed a 500 Internal Server Error.
+  The error indicated was: NameError (uninitialized constant ToysController::Toys)
+  The error originated from the create method in the toys_controller. Toy was incorrectly named as Toys
 
 - Update the number of likes for a toy
 
   - How I debugged:
+Checked the controller action #update and ensured it was rendering json
 
 - Donate a toy to Goodwill (and delete it from our database)
 
   - How I debugged:
+  Checked Rails server log and noticed the last request was DELETE but the error indicated that no route matched [DELETE]
+  I included the destroy route in the route.rb file 
